@@ -1,19 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Queue System</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Hello, World!</title>
   </head>
   <body>
-    <h1 class="title">Queue System</h1>
-    <input type="text" id="nameInput" placeholder="Enter Name" />
-    <button id="addButton">Add to Queue</button>
-    <button id="serveButton">Serve Next</button>
+      <h1>Canteen Line</h1><br>
+      <form onsubmit="registerForm()">
+        <fieldset>
+          <legend>User Information</legend>
+          
+          <label for="nameInput">Name:</label><br>
+          <input type="text" id="nameInput" name="loginInput" placeholder="Last Name, First Name X.">
+          <br><br>
+          
+          <label for="idNumberInput">Student ID Number:</label><br>
+          <input type="number" id="idNumberInput" name="loginInput" placeholder="xx-xxxx-xxx">
+          <br><br>
+          
+          <label for="sectionInput">Section:</label><br>
+          <select id="sectionInput">
+            <option selected disabled>Select Your Section</option>
+            
+            <option value="aquamarine">G7 - Aquamarine</option>
+            <option value="opal">G7 - Opal</option>
+            <option value="sapphire">G7 - Sapphire</option>
+            <option value="turquoise">G7 - Turquoise</option>
+            
+            <option value="opal">G8 - Anthurium</option>
+            <option value="opal">G8 - Carnation</option>
+            <option value="opal">G8 - Daffodil</option>
+            <option value="opal">G8 - Sunflower</option>
+            
+            <option value="opal">G9 - Barium</option>
+            <option value="opal">G9 - Calcium</option>
+            <option value="opal">G9 - Lithium</option>
+            <option value="opal">G9 - Sodium</option>
+            
+            <option value="opal">G10 - Electron</option>
+            <option value="opal">G10 - Graviton</option>
+            <option value="opal">G10 - Proton</option>
+            
+            <option value="opal">G11 - Mars</option>
+            <option value="opal">G11 - Mercury</option>
+            <option value="opal">G11 - Venus</option>
+            
+            <option value="opal">G12 - Del Mundo</option>
+            <option value="opal">G12 - Orosa</option>
+            <option value="opal">G12 - Zara</option>
+          </select>
+          <br><br>
+        
+          
+          <label for="genderInput">Gender:</label><br>
+          <select id="genderInput">
+            <option selected disabled>Select Your Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="PNTS">Prefer Not To Say</option>
+            
+          </select>
+          
+        </fieldset>
+      </form>
+      
     
-    <h2>Current Queue:</h2>
-    <ul id="queueList"></ul>
-    
-    <p id="currentTime"></p>
-    <script src="script.js"></script>
+      <script>
+        
+      </script>
   </body>
+  
+  
+  <style>
+    * {
+      
+    }
+  </style>
 </html>
