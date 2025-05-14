@@ -11,18 +11,31 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-bottom: 12px solid #023656;
+}
+
+#registrationHeader {
+  position: relative;
+  top: 0px;
+  left: 10px;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 5px;
 }
 
 nav {
   position: absolute;
   width: 1650px;
-  height: 50px;
+  height: 55px;
   font-size: 25px;
-  top: 150px;
-  background-color: black;
-  color: white;
+  top: 145px;
   left: -5px;
+  background-color: rgb(0, 0, 0);
+  color: black;
   text-align: center;
   align-items: center;
 }
@@ -30,7 +43,7 @@ nav {
 #navHeader {
   position: absolute;
   top: -15px;
-  left: 485px;
+  left: 465px;
   color: white;
   font-size: 30px;
 }
@@ -53,29 +66,200 @@ nav {
 
 section {
   position: absolute;
-  width: 1600px;
+  width: 1510px;
+  height: 630px;
   top: 195px;
   left: 0px;
-  border: 6px solid black;
-  background-color: #0065b1;
-  color: white;
+  background-color: #002b4c;
+  color: black;
   margin: 5px auto;
   padding-left: 5px;
   padding-right: 5px;
+  background-image: linear-gradient(to top, #80b9ff, #c3f2ff);
+  font-size: 20px;
+  border: 2px solid black;
+}
+
+section>form>button {
+  background-color: #e1f1ff;
+  padding: 5px 10px; /* Adjust these values to make the button bigger (top/bottom, left/right) */
+  border-radius: 10px; /* Adjust this value to control the roundness of the corners */
+  height: 40px;
+  width: 80px;
+  font-size: 15px;
+  transition-duration: 0.6s;
+}
+
+section>form>button:hover {
+  background-color: #c6e6ff;
+  height: 50px;
+  width: 100px;
+  transition-duration: 0.6s;
+  font-size: 20px;
+}
+
+#fieldForm {
+  background-color: rgb(240, 248, 255);
+  width: 1475px;
+}
+
+.inputSelection {
+  border-radius: 10px;
+  border: 2px solid black;
+  transition-duration: 0.8s;
+  width: 650px;
+  height: 25px;
+  font-size: 18px;
 }
     
+.inputSelection:hover {
+  background-color: #d2e3ff;
+}
 article {
   position: absolute;
-  width: 1600px;
-  top: 634px;
+  width: 1500px;
+  height: 550px;
+  top: 750px;
   left: 0px;
   background-color: white;
+  border: 5px solid black;
   color: white;
   margin: 5px auto;
   padding-left: 5px;
   padding-right: 5px;
-  background-image: url('adminPanel.png');
 }
+
+#queueHeader {
+  position: absolute;
+  font-size: 50px;
+  width: 450px;
+  height: 65px;
+  top: -30px;
+  left: 20px;
+  background-color: rgb(107, 147, 255);
+  color: white;
+  border-radius: 10px;
+  border: 3px solid black;
+  text-align: center;
+  align-items: center;
+}
+
+#queue {
+  position: absolute;
+  font-size: 25px;
+  width: 1450px;
+  height: 165px;
+  top: 50px;
+  background-color: rgb(182, 202, 255);
+  color: black;
+  border-radius: 10px;
+  border: 3px solid black;
+  text-align: center;
+  align-items: center;
+}
+
+#adminHeader {
+  position: absolute;
+  font-size: 50px;
+  width: 450px;
+  height: 65px;
+  top: 230px;
+  left: 20px;
+  background-color: rgb(107, 147, 255);
+  color: white;
+  border-radius: 10px;
+  border: 3px solid black;
+  text-align: center;
+  align-items: center;
+}
+
+#admin {
+  position: absolute;
+  font-size: 25px;
+  width: 1450px;
+  height: 165px;
+  top: 310px;
+  background-color: rgb(182, 202, 255);
+  color: black;
+  border-radius: 10px;
+  border: 3px solid black;
+  text-align: center;
+  align-items: center;
+}
+
+#serveButton {
+  position: relative;
+  top: 0px;
+  background-color: #b6ffb6;
+  border-radius: 10px; /* Adjust this value to control the roundness of the corners */
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+  transition-duration: 0.6s;
+}
+
+#serveButton:hover {
+  position: relative;
+  top: 0px;
+  background-color: #00ff00;
+  border-radius: 10px; /* Adjust this value to control the roundness of the corners */
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+  transition-duration: 0.s;
+}
+
+
+section>form>button:hover {
+  background-color: #c6e6ff;
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+}
+
+#removeButton {
+  position: relative;
+  top: 0px;
+  background-color: #ffb6b6;
+  border-radius: 10px; /* Adjust this value to control the roundness of the corners */
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+  transition-duration: 0.2s;
+}
+
+#removeButton:hover {
+  position: relative;
+  top: 0px;
+  background-color: #ff0000;
+  border-radius: 10px; /* Adjust this value to control the roundness of the corners */
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+}
+
+#disclaimerHead {
+  position: absolute;
+  left: 710px;
+  top: 130px;
+  width: 770px;
+  height: 270px;
+  padding: 5px;
+  background-color: white;
+  font-size: 40px;
+  font-weight: bold;
+  border: 3px solid black;
+}
+
+#disclaimerText {
+  position: absolute;
+  left: 720px;
+  top: 160px;
+  width: 750px;
+  font-size: 25px;
+  text-align: justify;
+}
+
 body {
   background-color: #9abbd5;
 }
