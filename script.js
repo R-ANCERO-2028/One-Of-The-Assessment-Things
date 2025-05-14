@@ -1,5 +1,6 @@
 document.getElementById('registrationForm').onsubmit = function (refresh) {
 	refresh.preventDefault();
+	let time = new Date().toLocaleString();
       	let name = document.getElementById('nameInput').value.trim();
       	let id = document.getElementById('idNumberInput').value.trim();
       	let purpose = document.getElementById('purposeInput').value.trim();
@@ -7,8 +8,8 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
       	let section = document.getElementById('sectionInput').value.trim();
       	let q = load();
         
-      	let idRegist = loadID();
-      	if (idRegist[id] && idRegist[id] !== name) {
+      	let regist = loadID();
+      	if (regist[id] && regist[id] !== name) {
         	alert("Invalid Queue Entry - ID In-Use"); return;
       	}
      
@@ -23,7 +24,7 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
        		alert("Invalid Queue Entry - Already Queuing"); return;
     	}
      
-    	q.push({ name, id, purpose, gender, section });
+    	q.push({ time, name, id, purpose, gender, section });
     	save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
     	display(); this.reset(); return false;
 }
@@ -45,7 +46,7 @@ function cookieLay(name, value) {
 function save(queue) {
     	let entries = "";
     	for (let i = 0; i < queue.length; i++) {
-      		entries += queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + "|;";
+      		entries += queue[i].time + queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + "|;";
     	} localStorage.setItem("queueInfo", entries);
 }
 
@@ -58,25 +59,28 @@ function load() {
         	let parts = bits[i].split("|");
       		if (parts.length >= 5) {
         		list.push({
-		        name: parts[0],
-		        id: parts[1],
-		        purpose: parts[2],
-		        gender: parts[3],
-		        section: parts[4],
+				time: parts[o];
+		        	name: parts[1],
+		        	id: parts[2],
+		        	purpose: parts[3],
+		        	gender: parts[4],
+		        	section: parts[5],
       			});
     		}
   	} return list;
 }
 
 function saveID(id, name) {
-  	let idRegist = loadID();
-  	if (!idRegist[id]) {
-    		idRegist[id] = name;
-  	} let value = "";
-	
-  	for (let key in idRegist) {
-    		value += key + "|" + idRegist[key] + "|";
-  	} localStorage.setItem("idRegist", value);
+  	let idRegist = localStorage.getItem("idRegist");;
+  	if (!idRegist) {
+    		idRegist = "";
+  	} let idens = idRegist.split("|");
+  	for (let i = 0; i < idens.length; i += 2) {
+    		if (idens[i] === id) {
+			alert("Invalid Queue Entry - False ID"); return;
+		}
+  	} idRegist += id + "|" + name + "|";
+	localStorage.setItem("idRegist", value);
 }
 
 function loadID() {
@@ -84,8 +88,7 @@ function loadID() {
   	if (!idRegist) {
     		return {};
   	} let regist = {}; let entries = idRegist.split("|");
-	
-  	for (let i = 0; i < entries.length; i += 2) {
+  	for (let i = 0; i < entries.length - 1; i += 2) {
     		regist[entries[i]] = entries[i + 1];
   	} return regist;
 }
@@ -99,11 +102,11 @@ function display() {
     		queue.innerHTML = "Waiting for person...";
     		admin.innerHTML = "No one in the queue...";
   	} else {
-    	for (let i = 0; i < q.length; i++) {
-      		let u = q[i];
-      		que += "<li>" + u.name + " - " + u.purpose + "</li>";
-      		adm += "<li>" + u.name + " (" + u.id + " - " + u.section + " - " + u.gender + ") " + u.purpose +  ' <button onclick = "serve(' + i + ')"> Serve </button> ' + ' <button onclick = "remove(' + i + ')"> Remove </button> ' + "</li>";
-    	}
+    		for (let i = 0; i < q.length; i++) {
+      			let u = q[i];
+      			que += "<li>" + u.name + " - " + u.purpose + "</li>";
+      			adm += "<li>" + "(" + u.time + ") " + u.name + " (" + u.id + " - " + u.section + " - " + u.gender + ") " + u.purpose +  ' <button onclick = "serve(' + i + ')"> Serve </button> ' + ' <button onclick = "remove(' + i + ')"> Remove </button> ' + "</li>";
+    		}
   	} queue.innerHTML = que; admin.innerHTML = adm;
 }
 
