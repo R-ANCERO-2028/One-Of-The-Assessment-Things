@@ -25,7 +25,7 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
      
      let timeC = new Date().toLocaleString();
      q.push({ timeC, name, id, purpose, gender, section });
-     save(q); saveID(); cookieLay("userName", name); cookieLay("userID", id);
+     save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
      display(); this.reset(); return false;
 }
 
@@ -46,7 +46,7 @@ function cookieLay(name, value) {
 function save(queue) {
   let entries = "";
   for (let i = 0; i < queue.length; i++) {
-    entries += queue[i].time + "|" + queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + "|;";
+    entries += queue[i].timeC + "|" + queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + "|;";
   } localStorage.setItem("queueInfo", entries);
 }
 
@@ -59,22 +59,38 @@ function load() {
     let parts = bits[i].split("|");
     if (parts.length >= 5) {
       list.push({
-          time: parts[0],
+          timeC: parts[0],
           name: parts[1],
           id: parts[2],
           purpose: parts[3],
           gender: parts[4],
-          section: parts[4],
+          section: parts[5],
       });
     }
   } return list;
 }
 
-let idList = [];
-function saveID() {
-     let id = document.getElementById('idNumberInput').value.trim();
-     idList.push(id);
-     localStorage.setItem("idens", idList);
+function saveID(id, name) {
+  	let idRegist = localStorage.getItem("idRegist");;
+  	if (!idRegist) {
+    		idRegist = "";
+  	} let idens = idRegist.split("|");
+  	for (let i = 0; i < idens.length; i += 2) {
+    		if (idens[i] === id) {
+			alert("Invalid Queue Entry - False ID"); return;
+		}
+  	} idRegist += id + "|" + name + "|";
+	localStorage.setItem("idRegist", idRegist);
+}
+
+function loadID() {
+  	let idRegist = localStorage.getItem("idRegist");
+  	if (!idRegist) {
+    		return {};
+  	} let regist = {}; let entries = idRegist.split("|");
+  	for (let i = 0; i < entries.length - 1; i += 2) {
+    		regist[entries[i]] = entries[i + 1];
+  	} return regist;
 }
 
 function display() {
