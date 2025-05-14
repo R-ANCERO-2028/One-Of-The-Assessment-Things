@@ -46,7 +46,7 @@ function cookieLay(name, value) {
 function save(queue) {
   let entries = "";
   for (let i = 0; i < queue.length; i++) {
-    entries += queue[i].time + "|" + queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + "|;";
+    entries += queue[i].time + "|" + queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + ";";
   } localStorage.setItem("queueInfo", entries);
 }
 
@@ -57,7 +57,7 @@ function load() {
   } let bits = info.split(";"); let list = [];
   for (let i = 0; i < bits.length; i++) {
     let parts = bits[i].split("|");
-    if (parts.length >= 5) {
+    if (parts.length >= 6) {
       list.push({
           time: parts[0],
           name: parts[1],
