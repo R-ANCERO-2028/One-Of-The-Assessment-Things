@@ -91,11 +91,11 @@ section>form>button {
 }
 
 section>form>button:hover {
-  background-color: #c6e6ff;
-  height: 50px;
-  width: 100px;
-  transition-duration: 0.6s;
-  font-size: 20px;
+  background-color: #00467c;
+  color: white;
+  height: 45px;
+  width: 90px;
+  font-size: 16px;
 }
 
 #fieldForm {
@@ -209,13 +209,6 @@ article {
   transition-duration: 0.s;
 }
 
-
-section>form>button:hover {
-  background-color: #c6e6ff;
-  height: 50px;
-  width: 100px;
-  font-size: 20px;
-}
 
 #removeButton {
   position: relative;
