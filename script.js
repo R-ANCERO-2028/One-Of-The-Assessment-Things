@@ -24,7 +24,7 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
      }
      
      let timeC = new Date().toLocaleString();
-     q.push({ timeC, name, id, purpose, gender, section });
+     q.push({ time, name, id, purpose, gender, section });
      save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
      display(); this.reset(); return false;
 }
@@ -46,7 +46,7 @@ function cookieLay(name, value) {
 function save(queue) {
   let entries = "";
   for (let i = 0; i < queue.length; i++) {
-    entries += queue[i].timeC + "|" + queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + "|;";
+    entries += queue[i].time + "|" + queue[i].name + "|" + queue[i].id + "|" + queue[i].purpose + "|" + queue[i].gender + "|" + queue[i].section + "|;";
   } localStorage.setItem("queueInfo", entries);
 }
 
@@ -59,7 +59,7 @@ function load() {
     let parts = bits[i].split("|");
     if (parts.length >= 5) {
       list.push({
-          timeC: parts[0],
+          time: parts[0],
           name: parts[1],
           id: parts[2],
           purpose: parts[3],
