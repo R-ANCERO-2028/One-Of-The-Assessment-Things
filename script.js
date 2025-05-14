@@ -70,16 +70,19 @@ function load() {
   } return list;
 }
 
+let idList = [];
+function checkID() {
+	let id = document.getElementById('idNumberInput').value.trim();
+	idList.push(id);
+	localStorage.setItem("idens", idList);
+}
+
 function saveID(id, name) {
   	let idRegist = localStorage.getItem("idRegist");;
   	if (!idRegist) {
     		idRegist = "";
   	} let idens = idRegist.split("|");
-  	for (let i = 0; i < idens.length; i += 2) {
-    		if (idens[i] === id) {
-			alert("Invalid Queue Entry - False ID"); return;
-		}
-  	} idRegist += id + "|" + name + "|";
+  	idRegist += id + "|" + name + "|";
 	localStorage.setItem("idRegist", idRegist);
 }
 
