@@ -7,7 +7,7 @@
   <body>
     <header>
         <h1 id="textHeader">PHILIPPINE SCIENCE HIGH SCHOOL <br> CARAGA REGION CAMPUS</h1>
-        <img id="pisayLogo" src="pisayLogo.png"></img>
+        <img id="pisayLogo" src="pisayLogo.png">
     </header>
     <nav>
       <h1 id="navHeader"> Canteen Queue Management System Test</h1>
@@ -16,20 +16,19 @@
         
     <h2 id = "registrationHeader"> Join The Queue </h2>
     <form id = "registrationForm" onsubmit = "return false;">
-      <fieldset>
-        <legend> Entry Information </legend>
+      <fieldset id="fieldForm">
         
         <label for="nameInput"> Name: </label><br>
-        <input type="text" id="nameInput" name="loginInput" placeholder="Last Name, First Name M.I." required><br><br>
+        <input class="inputSelection" type="text" id="nameInput" name="loginInput" placeholder="Last Name, First Name M.I." required><br><br>
         
         <label for="purposeInput"> Purpose: </label><br>
-        <input type="text" id="purposeInput" name="loginInput" placeholder="Purpose" required><br><br>
+        <input class="inputSelection" type="text" id="purposeInput" name="loginInput" placeholder="Purpose" required><br><br>
         
         <label for="idNumberInput"> Student ID Number: </label><br>
-        <input type="number" id="idNumberInput" name="loginInput" placeholder="XXXXXXXX" required><br><br>
+        <input class="inputSelection" type="number" id="idNumberInput" name="loginInput" placeholder="XX-XXXX-XXX" required><br><br>
         
         <label for="sectionInput"> Section: </label><br>
-        <select id="sectionInput" name="loginInput" required>
+        <select class="inputSelection" id="sectionInput" name="loginInput" required>
           
           <option selected disabled> Select Your Section </option>
           
@@ -63,7 +62,7 @@
         </select><br><br>
         
         <label for="genderInput"> Gender: </label><br>
-        <select id="genderInput" name="loginInput" required>
+        <select class="inputSelection" id="genderInput" name="loginInput" required>
           
           <option selected disabled> Select Your Gender </option>
           <option value="Male"> Male </option>
@@ -72,6 +71,11 @@
            
         </select>
         
+        <div id="disclaimerHead">PLEASE NOTE:</div>
+        <p id="disclaimerText">You may only register once. Afterwards, you cannot submit until you are either served or removed. 
+          Please double-check your details before submitting. Submissions with the same student ID number will not be accepted. 
+          If the details submitted are inaccurate, they will be promptly removed.
+        </p>
       </fieldset><br>
       <button type = "reset"> Reset </button>
       <button type = "submit"> Submit </button>
@@ -79,11 +83,11 @@
   </section>
     
   <article>
-    <h3 id = "queueHeader"> Current Queue </h3>
-    <ol id = "queue"></ol>
-    <h3 id = "adminHeader"> Admin Panel </h3>
-    <ol id = "admin"></ol>
-  </article>   
+    <h3 class="adminHead" id = "queueHeader"> Current Queue </h3>
+    <ol class="adminText" id = "queue"></ol>
+    <h3 class="adminHead" id = "adminHeader"> Admin Panel </h3>
+    <ol class="adminText" id = "admin"></ol>
+  </article>  
     
   <script src="script.js"></script>
   </body>
