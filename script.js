@@ -1,6 +1,5 @@
 document.getElementById('registrationForm').onsubmit = function (refresh) {
 	refresh.preventDefault();
-	let time = new Date().toLocaleString();
       	let name = document.getElementById('nameInput').value.trim();
       	let id = document.getElementById('idNumberInput').value.trim();
       	let purpose = document.getElementById('purposeInput').value.trim();
@@ -23,7 +22,8 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
     	if (queuing) {
        		alert("Invalid Queue Entry - Already Queuing"); return;
     	}
-     
+
+	let time = new Date().toLocaleString();
     	q.push({ time, name, id, purpose, gender, section });
     	save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
     	display(); this.reset(); return false;
