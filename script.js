@@ -26,7 +26,7 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
 	let timeC = new Date().toLocaleString();
     	q.push({ time: timeC, name, id, purpose, gender, section });
     	save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
-    	display();
+    	display(); return false;
 }
 
 function cookieGrab(name) {
