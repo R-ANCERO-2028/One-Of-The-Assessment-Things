@@ -59,11 +59,12 @@ function load() {
     let parts = bits[i].split("|");
     if (parts.length >= 5) {
       list.push({
-        name: parts[0],
-        id: parts[1],
-        purpose: parts[2],
-        gender: parts[3],
-        section: parts[4],
+          time: parts[0],
+          name: parts[1],
+          id: parts[2],
+          purpose: parts[3],
+          gender: parts[4],
+          section: parts[4],
       });
     }
   } return list;
