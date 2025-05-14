@@ -1,87 +1,90 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Canteen Registration Form</title>
-    <link rel="stylesheet" href="style.css" />
+    <title> Canteen Queue Management System </title>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-      <h1>Canteen Registration Form</h1>
-      <hr>
-      
-      <h2 id="registrationHeader">Join The Queue</h2>
-      <form onsubmit="registerForm()">
-        <fieldset>
-          <legend>User Information</legend>
-          
-          <label for="nameInput">Name:</label><br>
-          <input type="text" id="nameInput" name="loginInput" placeholder="Last Name, First Name MI.">
-          <br><br>
-
-          <label for="purposeInput">Purpose:</label><br>
-          <input type="text" id="purposeInput" name="loginInput" placeholder="Purpose">
-          <br><br>
-          
-          <label for="idNumberInput">Student ID Number:</label><br>
-          <input type="number" id="idNumberInput" name="loginInput" placeholder="xx-xxxx-xxx">
-          <br><br>
-          
-          <label for="sectionInput">Section:</label><br>
-          <select id="sectionInput">
-            <option selected disabled>Select Your Section</option>
-            
-            <option value="Aquamarine">G7 - Aquamarine</option>
-            <option value="Opal">G7 - Opal</option>
-            <option value="Sapphire">G7 - Sapphire</option>
-            <option value="Turquoise">G7 - Turquoise</option>
-            
-            <option value="Anthurium">G8 - Anthurium</option>
-            <option value="Carnation">G8 - Carnation</option>
-            <option value="Daffodil">G8 - Daffodil</option>
-            <option value="Sunflower">G8 - Sunflower</option>
-            
-            <option value="Barium">G9 - Barium</option>
-            <option value="Calcium">G9 - Calcium</option>
-            <option value="Lithium">G9 - Lithium</option>
-            <option value="Sodium">G9 - Sodium</option>
-            
-            <option value="Electron">G10 - Electron</option>
-            <option value="Graviton">G10 - Graviton</option>
-            <option value="Proton">G10 - Proton</option>
-            
-            <option value="Mars">G11 - Mars</option>
-            <option value="Mercury">G11 - Mercury</option>
-            <option value="Venus">G11 - Venus</option>
-            
-            <option value="Del Mundo">G12 - Del Mundo</option>
-            <option value="Orosa">G12 - Orosa</option>
-            <option value="Zara">G12 - Zara</option>
-          </select>
-          <br><br>
+    <header>
+        <h1 id="textHeader">PHILIPPINE SCIENCE HIGH SCHOOL <br> CARAGA REGION CAMPUS</h1>
+        <img id="pisayLogo" src="pisayLogo.png"></img>
+    </header>
+    <nav>
+      <h1 id="navHeader"> Canteen Queue Management System </h1>
+    </nav>
+    <section>
         
+    <h2 id = "registrationHeader"> Join The Queue </h2>
+    <form id = "registrationForm">
+      <fieldset>
+        <legend> Entry Information </legend>
+        
+        <label for="nameInput"> Name: </label><br>
+        <input type="text" id="nameInput" name="loginInput" placeholder="Last Name, First Name M.I." required><br><br>
+        
+        <label for="purposeInput"> Purpose: </label><br>
+        <input type="text" id="purposeInput" name="loginInput" placeholder="Purpose" required><br><br>
+        
+        <label for="idNumberInput"> Student ID Number: </label><br>
+        <input type="number" id="idNumberInput" name="loginInput" placeholder="XXXXXXXX" required><br><br>
+        
+        <label for="sectionInput"> Section: </label><br>
+        <select id="sectionInput" name="loginInput" required>
           
-          <label for="genderInput">Gender:</label><br>
-          <select id="genderInput">
-            <option selected disabled>Select Your Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="PNTS">Prefer Not To Say</option>
-            
-          </select>
+          <option selected disabled> Select Your Section </option>
           
-        </fieldset><br>
-        <button type="reset" id="resetRegistration">Reset</button>
-        <button type="submit" id="submitRegistration">Submit</button> 
-      </form>
-    <hr>
+          <option value="Aquamarine"> G7 - Aquamarine </option>
+          <option value="Opal"> G7 - Opal </option>
+          <option value="Sapphire"> G7 - Sapphire </option>
+          <option value="Turquoise"> G7 - Turquoise </option>
+          
+          <option value="Anthurium"> G8 - Anthurium </option>
+          <option value="Carnation"> G8 - Carnation </option>
+          <option value="Daffodil"> G8 - Daffodil </option>
+          <option value="Sunflower"> G8 - Sunflower </option>
+          
+          <option value="Barium"> G9 - Barium </option>
+          <option value="Calcium"> G9 - Calcium </option>
+          <option value="Lithium"> G9 - Lithium </option>
+          <option value="Sodium"> G9 - Sodium </option>
+          
+          <option value="Electron"> G10 - Electron </option>
+          <option value="Graviton"> G10 - Graviton </option>
+          <option value="Proton"> G10 - Proton </option>
+          
+          <option value="Mars"> G11 - Mars </option>
+          <option value="Mercury"> G11 - Mercury </option>
+          <option value="Venus"> G11 - Venus </option>
+          
+          <option value="Del Mundo"> G12 - Del Mundo </option>
+          <option value="Orosa"> G12 - Orosa </option>
+          <option value="Zara"> G12 - Zara </option>
+          
+        </select><br><br>
+        
+        <label for="genderInput"> Gender: </label><br>
+        <select id="genderInput" name="loginInput" required>
+          
+          <option selected disabled> Select Your Gender </option>
+          <option value="Male"> Male </option>
+          <option value="Female"> Female </option>
+          <option value="PNTS"> Prefer Not To Say </option>
+           
+        </select>
+        
+      </fieldset><br>
+      <button type = "reset"> Reset </button>
+      <button type = "submit"> Submit </button>
+    </form><br>
+  </section>
     
-    <h2 id="queueHeader">Current Queue</h2>
-    <p id="queue">-END OF QUEUE-</p>
-    <hr>
-
-    <h2 id="adminHeader">Admin Panel</h2>
-
-  
+  <article>
+    <h3 id = "queueHeader"> Current Queue </h3>
+    <ol id = "queue"></ol>
+    <h3 id = "adminHeader"> Admin Panel </h3>
+    <ol id = "admin"></ol>
+  </article>   
     
-      <script src="script.js"></script>
+  <script src="script.js"></script>
   </body>
-  
 </html>
