@@ -80,7 +80,7 @@ function saveID(id, name) {
 			alert("Invalid Queue Entry - False ID"); return;
 		}
   	} idRegist += id + "|" + name + "|";
-	localStorage.setItem("idRegist", value);
+	localStorage.setItem("idRegist", idRegist);
 }
 
 function loadID() {
