@@ -23,10 +23,10 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
        		alert("Invalid Queue Entry - Already Queuing"); return;
     	}
 
-	let time = new Date().toLocaleString();
-    	q.push({ time, name, id, purpose, gender, section });
+	let timeC = new Date().toLocaleString();
+    	q.push({ time: timeC, name, id, purpose, gender, section });
     	save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
-    	display(); this.reset(); return false;
+    	display(); this.reset();
 }
 
 function cookieGrab(name) {
