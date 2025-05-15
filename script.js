@@ -24,7 +24,7 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
      }
      
      let time = new Date().toLocaleString();
-     qg.push({ time, name, id, purpose, gender, section });
+     q.push({ time, name, id, purpose, gender, section });
      save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
      display(); this.reset(); return false;
 }
