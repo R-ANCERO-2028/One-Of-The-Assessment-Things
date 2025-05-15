@@ -14,7 +14,7 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
      
      for (let registID in regist) {
 	     if (regist[registID] === name && registID !== id) {
-		     alert("Invalid Queue Entry - ID In-Use"); return;
+		     alert("Invalid Queue Entry - False ID"); return;
 	     }
      }
 
