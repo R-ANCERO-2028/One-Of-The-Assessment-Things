@@ -22,7 +22,7 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
      if (queuing) {
        alert("Invalid Queue Entry - Already Queuing"); return;
      }
-     f
+     
      let time = new Date().toLocaleString();
      qg.push({ time, name, id, purpose, gender, section });
      save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
