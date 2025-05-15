@@ -12,6 +12,13 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
        alert("Invalid Queue Entry - ID In-Use"); return;
      }
      
+     for (let registID in regist) {
+	     if (regist[registID] === name && registID !== id) {
+		     alert("Invalid Queue Entry - ID In-Use"); return;
+	     }
+     }
+
+     
      let queuing = false;
      for (let i = 0; i < q.length; i++) {
        if (q[i].name === name || q[i].id === id) {
@@ -22,9 +29,9 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
      if (queuing) {
        alert("Invalid Queue Entry - Already Queuing"); return;
      }
-     
+     f
      let time = new Date().toLocaleString();
-     q.push({ time, name, id, purpose, gender, section });
+     qg.push({ time, name, id, purpose, gender, section });
      save(q); saveID(id, name); cookieLay("userName", name); cookieLay("userID", id);
      display(); this.reset(); return false;
 }
@@ -75,7 +82,9 @@ function saveID(id, name) {
   	if (!idRegist) {
     		idRegist = "";
   	} let idens = idRegist.split("|");
-  	idRegist += id + "|" + name + "|";
+	for (let i = 0; i < idens.length - 1; i += 2) {
+		return;
+	} idRegist += id + "|" + name + "|";
 	localStorage.setItem("idRegist", idRegist);
 }
 
