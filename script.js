@@ -12,13 +12,6 @@ document.getElementById('registrationForm').onsubmit = function (refresh) {
        alert("Invalid Queue Entry - ID In-Use"); return;
      }
      
-     for (let registID in regist) {
-	     if (regist[registID] === name && registID !== id) {
-		     alert("Invalid Queue Entry - False ID"); return;
-	     }
-     }
-
-     
      let queuing = false;
      for (let i = 0; i < q.length; i++) {
        if (q[i].name === name || q[i].id === id) {
@@ -82,9 +75,7 @@ function saveID(id, name) {
   	if (!idRegist) {
     		idRegist = "";
   	} let idens = idRegist.split("|");
-	for (let i = 0; i < idens.length - 1; i += 2) {
-		return;
-	} idRegist += id + "|" + name + "|";
+	idRegist += id + "|" + name + "|";
 	localStorage.setItem("idRegist", idRegist);
 }
 
