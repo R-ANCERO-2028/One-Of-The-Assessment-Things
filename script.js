@@ -70,13 +70,6 @@ function load() {
   } return list;
 }
 
-let idList = [];
-function checkID() {
-	let id = document.getElementById('idNumberInput').value.trim();
-	idList.push(id);
-	localStorage.setItem("idens", idList);
-}
-
 function saveID(id, name) {
   	let idRegist = localStorage.getItem("idRegist");;
   	if (!idRegist) {
